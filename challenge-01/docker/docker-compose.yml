@@ -1,0 +1,20 @@
+name: challenge-01
+
+services:
+  challenge-01:
+    image: aocc/challenge01
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    env_file:
+      - opentelemetry.properties
+    extra_hosts:
+      # host.containers.internal is standard for podman, with this mapping it is also available for docker
+      - "host.containers.internal:host-gateway"
+    volumes:
+      # file is shared with multiple containers, adding 'z' attribute
+      - ../.otel/opentelemetry-javaagent.jar:/app/opentelemetry-javaagent.jar:ro,z
+    environment:
+      - OTEL_SERVICE_NAME=challenge-01
+    ports:
+      - "8080:8080"
