@@ -60,3 +60,10 @@ _run-k6 TEST_ID SCRIPT:
 @k6-with-heavy-query:
     just _run-k6 "{{TAG}}_loadWithHeavyQuery" "k6/simpleloadWithHeavyQuery.js"
 
+# Do not export JAVA_TOOLS_OPTIONS, otherwise the maven build will pick it up as well
+export OTEL_JAVAAGENT_CONFIGURATION_FILE := "./opentelemetry.properties"
+export OTEL_SERVICE_NAME := "challenge-01-java"
+
+# Run the java application directly
+run-java-application:
+    java -javaagent:.otel/opentelemetry-javaagent.jar -jar target/challenge-01-0.0.1-SNAPSHOT.jar
