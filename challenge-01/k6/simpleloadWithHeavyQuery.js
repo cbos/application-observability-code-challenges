@@ -8,11 +8,11 @@ export const options = {
 };
 
 export default function () {
-    const rnd = getRandomInt(22);
+    const rnd = getRandomInt(21);
     http.get('http://localhost:8080/spring-app/challenge/' + rnd);
     sleep(1);
 }
 
 function getRandomInt(max) {
-    return 10 + Math.floor(Math.random() * max);
+    return 1 + Math.floor(Math.random() * max);
 }

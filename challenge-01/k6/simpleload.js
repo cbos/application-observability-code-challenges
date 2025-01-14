@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { sleep } from 'k6';
 export const options = {
     vus: 2,
-    duration: '120s',
+    duration: '300s',
 
 };
 
@@ -13,5 +13,5 @@ export default function () {
 }
 
 function getRandomInt(max) {
-    return 10 + Math.floor(Math.random() * max);
+    return 1 + Math.floor(Math.random() * max);
 }
