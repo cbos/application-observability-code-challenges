@@ -50,13 +50,13 @@ _run-k6 TEST_ID SCRIPT:
 
 # Run k6 scenario 1, just a small load for 2 minutes
 @k6-simple-load:
-    just _run-k6 "{{TAG}}_scenario1" "k6/simpelload.js"
+    just _run-k6 "{{TAG}}_simpleload" "k6/simpleload.js"
 
 # Run k6 scenario 2, high load
 @k6-high-load:
-    just _run-k6 "{{TAG}}_scenario2" "k6/highload.js"
+    just _run-k6 "{{TAG}}_highload" "k6/highload.js"
 
 # Run k6 scenario 3, simple load with heavy query
 @k6-with-heavy-query:
-    just _run-k6 "{{TAG}}_scenario3" "k6/simpleloadWithHeavyQuery.js"
+    just _run-k6 "{{TAG}}_loadWithHeavyQuery" "k6/simpleloadWithHeavyQuery.js"
 
