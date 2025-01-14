@@ -8,8 +8,8 @@ export const options = {
             startVUs: 1,
             stages: [
                 { duration: '30s', target: 2 }, // start with just 1 user
-                { duration: '60s', target: 20 }, // Ramp up to 20 users
-                { duration: '300s', target: 40 }, // Keep sending with 20 users
+                { duration: '180s', target: 20 }, // Ramp up to 20 users
+                { duration: '300s', target: 40 }, // Keep sending with 40 users
                 { duration: '20s', target: 1 } // Calm down
             ],
             gracefulRampDown: '0s',
