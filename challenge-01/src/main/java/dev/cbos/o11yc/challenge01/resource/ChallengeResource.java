@@ -69,7 +69,7 @@ public class ChallengeResource {
     }
 
     private List<Challenge> handleRequest(int id) throws InterruptedException {
-        Thread.sleep((long) (Math.abs((random.nextGaussian() + 1.0) * 300.0))); // Simulate some heavy work
+        Thread.sleep((long) (Math.abs((random.nextDouble() + 1.0) * 200.0))); // Simulate some heavy work
 
         if (id < 0) {
             return challenges;
