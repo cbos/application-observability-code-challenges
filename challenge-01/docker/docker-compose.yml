@@ -1,7 +1,7 @@
 name: challenge-01
 
 services:
-  challenge-01:
+  application:
     image: aocc/challenge01
     build:
       context: ..
