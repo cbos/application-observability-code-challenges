@@ -7,10 +7,12 @@ export const options = {
             executor: 'ramping-vus',
             startVUs: 1,
             stages: [
-                { duration: '30s', target: 2 }, // start with just 1 user
+                { duration: '30s', target: 2 }, // start with just 2 user
                 { duration: '180s', target: 20 }, // Ramp up to 20 users
+                { duration: '180s', target: 20 }, // Keep sending with 20 users
+                { duration: '180s', target: 40 }, // Ramp up to 20 users
                 { duration: '300s', target: 40 }, // Keep sending with 40 users
-                { duration: '20s', target: 1 } // Calm down
+                { duration: '30s', target: 1 } // Calm down
             ],
             gracefulRampDown: '0s',
         },
