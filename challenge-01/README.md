@@ -12,7 +12,9 @@ The goal is to have fun and learn in the first place.
 > - Try to find out what is happens, make a hypothesis❗
 > - **Improve the observability** of the application to **prove the hypothesis**
 > - Optional: fix the problem and **prove it with observability data that it is really fixed**
-> - Share your findings and solution, either as a ['discussion'](https://github.com/cbos/application-observability-code-challenges/discussions) or as a pull request
+> - Optional, but highly appreciated 🙏: Share your findings, insights you learned and potential solution, either as a ['discussion'](https://github.com/cbos/application-observability-code-challenges/discussions) or as a pull request
+
+In one or two weeks I will come up with a blogpost with insights, observability improvements and possible solutions.
 
 ## Challenge
 
