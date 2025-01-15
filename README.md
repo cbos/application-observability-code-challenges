@@ -49,3 +49,6 @@ The sample application is prepared to send data using OpenTelemetry, so any setu
 
 ![Application Observability flow with own stack](images/flow_with_own_stack.png)
 
+# Challenges
+
+- [Challenge 1](challenge-01/README.md) - Spring boot with Jersey/JAX-RS REST endpoint with some strange behaviour 🤔

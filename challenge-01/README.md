@@ -30,8 +30,14 @@ The goal is to have fun and learn in the first place.
 
 ## Prepare the environment
 
-Launch your observability stack or use the Observability Toolkit.
-The sample application assumes that you have an OpenTelemetry endpoint running at `localhost:4318`.
+### Clone the repository
+To be able to run the sample application, you need to clone this repository.   
+Clone the repository to your local machine and go to the folder of `challenge-01`.
+
+```shell
+git clone https://github.com/cbos/application-observability-code-challenges
+cd application-observability-code-challenges/challenge-01
+```
 
 ### Download the OpenTelemetry Java agent jar
 
@@ -49,7 +55,10 @@ just build
 ```
 This will download the OpenTelemetry Java agent jar into the `.otel' directory.
 
-### Observability Tooklit
+### Observability Tooklit or your own stack
+Launch your observability stack or use the Observability Toolkit.
+The sample application assumes that you have an OpenTelemetry endpoint running at `localhost:4318`.
+
 If you don't have any observability tools running, you can run a preconfigured setup with the following commands:
 
 ```shell
