@@ -6,8 +6,6 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    env_file:
-      - opentelemetry.properties
     extra_hosts:
       # host.containers.internal is standard for podman, with this mapping it is also available for docker
       - "host.containers.internal:host-gateway"
@@ -16,5 +14,13 @@ services:
       - ../.otel/opentelemetry-javaagent.jar:/app/opentelemetry-javaagent.jar:ro,z
     environment:
       - OTEL_SERVICE_NAME=challenge-01
+      - JAVA_TOOL_OPTIONS=-javaagent:/app/opentelemetry-javaagent.jar
+      - OTEL_TRACES_SAMPLER=always_on
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://host.containers.internal:4318
+      - OTEL_METRIC_EXPORT_INTERVAL=2000
+      # Tomcat JMX must be enabled in application.properties with server.tomcat.mbeanregistry.enabled=true
+      - OTEL_JMX_ENABLED=true
+      - OTEL_JMX_TARGET_SYSTEM=tomcat
+      - OTEL_JMX_DISCOVERY_DELAY=1m
     ports:
       - "8080:8080"

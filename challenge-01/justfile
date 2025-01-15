@@ -22,6 +22,10 @@ default:
 build:
     ./mvnw clean verify
 
+# Run the java application directly
+run-app:
+    OTEL_JAVAAGENT_CONFIGURATION_FILE="./opentelemetry.properties" java -javaagent:.otel/opentelemetry-javaagent.jar -jar target/challenge-01-0.0.1-SNAPSHOT.jar
+
 # Download (and overwrite) OpenTelemetry autoinstrument jar
 download-otel:
     @mkdir -p .otel
@@ -59,11 +63,3 @@ _run-k6 TEST_ID SCRIPT:
 # Run k6 scenario 3, simple load with heavy query
 @k6-with-heavy-query:
     just _run-k6 "{{TAG}}_loadWithHeavyQuery" "k6/simpleloadWithHeavyQuery.js"
-
-# Do not export JAVA_TOOLS_OPTIONS, otherwise the maven build will pick it up as well
-export OTEL_JAVAAGENT_CONFIGURATION_FILE := "./opentelemetry.properties"
-export OTEL_SERVICE_NAME := "challenge-01-java"
-
-# Run the java application directly
-run-java-application:
-    java -javaagent:.otel/opentelemetry-javaagent.jar -jar target/challenge-01-0.0.1-SNAPSHOT.jar
