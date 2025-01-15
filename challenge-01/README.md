@@ -16,6 +16,8 @@ The goal is to have fun and learn in the first place.
 
 In one or two weeks I will come up with a blogpost with insights, observability improvements and possible solutions.
 
+An online guided environment is available with KillerCode, see [https://killercoda.com/observability-code-challenges](https://goto.ceesbos.nl/aocckk)
+
 ## Challenge
 
 ## Setup in this repository
