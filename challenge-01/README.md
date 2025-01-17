@@ -3,7 +3,8 @@
 # Application Observability Code Challenge 1
 
 This is the first challenge of the Application Observability Code Challenges.   
-See the [announcement blog](https://goto.ceesbos.nl/aocc) or the [repository README](../README.md) for more information.
+See the [announcement blog](https://goto.ceesbos.nl/aocc) or the [repository README](../README.md) for more information about the challenges.
+And [first challenge blogpost](https://goto.ceesbos.nl/c1) for the announcement of this first challenge.
 The goal is to have fun and learn in the first place.
 
 > 🚨 **Challenge**:
@@ -99,7 +100,7 @@ These testscripts are implemented with [K6](https://grafana.com/oss/k6/), a load
 K6 also produces metrics as well in OpenTelemetry format.
 
 The setup looks like this:
-![K6 setup](images/k6_application_setup.png)
+![K6 setup](images/full_setup.png)
 
 
 ## Run simple load test
