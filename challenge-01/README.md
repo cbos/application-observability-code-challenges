@@ -1,6 +1,7 @@
 ![Challenge 01](../images/aocc_challenge01.png)
 
-# Application Observability Code Challenge 1
+# Application Observability Code Challenge 1 
+![Badge](https://goto.ceesbos.nl/badge/github/cbos/application-observability-code-challenges/challenge-01)
 
 This is the first challenge of the Application Observability Code Challenges.   
 See the [announcement blog](https://goto.ceesbos.nl/aocc) or the [repository README](../README.md) for more information about the challenges.
@@ -69,7 +70,7 @@ If you don't have any observability tools running, you can run a preconfigured s
 ```shell
 git clone https://github.com/cbos/observability-toolkit
 cd observability-toolkit
-docker-compose up -d 
+just up # or docker-compose up -d 
 ```
 Now you can open http://localhost:3000 to open Grafana.
 

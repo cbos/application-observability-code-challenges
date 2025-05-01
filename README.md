@@ -1,6 +1,7 @@
 ![Application Observability Code Challenges](images/aocc_cover.png)
 
 # Application Observability Code Challenges
+![Badge](https://goto.ceesbos.nl/badge/github/cbos/application-observability-code-challenges)
 
 Application Observability Code Challenges are a way to challenge yourself to improve the observability of a sample application. Of course, this application has some surprises that you probably did not expect.
 These challenges will help you develop an observability mindset and become more familiar with your observability tools.
