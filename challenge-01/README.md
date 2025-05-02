@@ -227,3 +227,10 @@ Suddenly all queries will hang, it is like you customers complaining about a slo
 If an application is auto-instrumented with OpenTelemetry, you can use the following to improve the observability:
 - Add more context to the spans, https://opentelemetry.io/docs/zero-code/java/agent/annotations/
 - Add more metrics, https://opentelemetry.io/docs/zero-code/java/agent/api/ to add a Meter, based on that you can add counters and gauges for example
+
+# Step by step walk through
+
+> [!CAUTION]
+> **Spoiler alert**   
+> To take you in a step by step approach I created a blog article. If you want to you can check this page and follow these steps: 
+> https://goto.ceesbos.nl/c1s
