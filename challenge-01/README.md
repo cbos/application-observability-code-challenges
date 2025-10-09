@@ -31,6 +31,7 @@ An online guided environment is available with KillerCode, see [https://killerco
 - Java 21 (if you want to use a lower version, you will need to modify the pom.xml)
 - Docker (if you want to use the provided docker-compose file)
 - Just CLI (optional, but recommended)
+- [K6](https://grafana.com/docs/k6/latest/set-up/install-k6/) for load testing 
 
 ## Prepare the environment
 
@@ -47,6 +48,7 @@ cd application-observability-code-challenges/challenge-01
 
 ```shell
 just download-otel
+# Or create a .otel directory and download the jar OpenTelemetry Java agent jar to the .otel directory
 ```
 This downloads the OpenTelemetry Java agent jar to the `.otel` directory.
 
