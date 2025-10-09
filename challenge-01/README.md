@@ -11,12 +11,10 @@ The goal is to have fun and learn in the first place.
 > 🚨 **Challenge**:
 > - Run the sample application
 > - Run the tests to see what happens
-> - Try to find out what is happens, make a hypothesis❗
+> - Try to find out what happens, make a hypothesis❗
 > - **Improve the observability** of the application to **prove the hypothesis**
 > - Optional: fix the problem and **prove it with observability data that it is really fixed**
 > - Optional, but highly appreciated 🙏: Share your findings, insights you learned and potential solution, either as a ['discussion'](https://github.com/cbos/application-observability-code-challenges/discussions) or as a pull request
-
-In one or two weeks I will come up with a blogpost with insights, observability improvements and possible solutions.
 
 An online guided environment is available with KillerCode, see [https://killercoda.com/observability-code-challenges](https://goto.ceesbos.nl/aocckk)
 
@@ -50,7 +48,7 @@ cd application-observability-code-challenges/challenge-01
 ```shell
 just download-otel
 ```
-This download the OpenTelemetry Java agent jar to the `.otel` directory.
+This downloads the OpenTelemetry Java agent jar to the `.otel` directory.
 
 ### Build the application
 
@@ -59,9 +57,9 @@ just build
 # or if you want to do it manually
 ./mvnw clean verify
 ```
-This will download the OpenTelemetry Java agent jar into the `.otel' directory.
+This will build and package the application.
 
-### Observability Tooklit or your own stack
+### Observability Toolkit or your own stack
 Launch your observability stack or use the Observability Toolkit.
 The sample application assumes that you have an OpenTelemetry endpoint running at `localhost:4318`.
 
@@ -219,7 +217,7 @@ just k6-with-heavy-query
 ```
 
 This is not a complicated test, but a test to see what happens when a 'heavy' query is executed.
-Suddenly all queries will hang, it is like you customers complaining about a slow system 🚨.
+Suddenly all queries will hang, it is like your customers complaining about a slow system 🚨.
 ![Slow responses](images/k6_slow_responses.png)
 
 # Observability improvements hints
