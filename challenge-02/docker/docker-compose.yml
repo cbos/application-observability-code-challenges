@@ -1,0 +1,68 @@
+x-otel-base: &otel-base
+  env_file:
+    - opentelemetry.properties
+  extra_hosts:
+    # host.containers.internal is standard for podman, with this mapping it is also available for docker
+    - "host.containers.internal:host-gateway"
+  volumes:
+    # file is shared with multiple containers, adding 'z' attribute
+    - ../.otel/opentelemetry-javaagent.jar:/app/opentelemetry-javaagent.jar:ro,z
+  mem_limit: 1gb
+
+name: OpenTelemetry-demo-app
+
+services:
+  common-backend:
+    <<: *otel-base
+    image: ceesbos.nl/common-backend
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      - OTEL_SERVICE_NAME=common-backend
+      - SPRING_APPLICATION_NAME=common-backend
+
+  regular-threads:
+    <<: *otel-base
+    image: ceesbos.nl/regular-threads
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      - OTEL_SERVICE_NAME=regular-threads
+      - SPRING_APPLICATION_NAME=regular-threads
+      - DOWNSTREAM_HOSTNAME=common-backend
+    ports:
+      - "8081:8080"
+
+  virtual-threads-21:
+    <<: *otel-base
+    image: ceesbos.nl/virtual-threads-21
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      - OTEL_SERVICE_NAME=virtual-threads-21
+      - SPRING_APPLICATION_NAME=virtual-threads-21
+      - DOWNSTREAM_HOSTNAME=common-backend
+      # Set spring.threads.virtual.enabled=true via a environment variable
+      - SPRING_THREADS_VIRTUAL_ENABLED=true
+    ports:
+      - "8082:8080"
+
+  virtual-threads-25:
+    <<: *otel-base
+    image: ceesbos.nl/virtual-threads-25
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      args:
+        - JAVA_VERSION=25_36-jre-alpine
+    environment:
+      - OTEL_SERVICE_NAME=virtual-threads-25
+      - SPRING_APPLICATION_NAME=virtual-threads-25
+      - DOWNSTREAM_HOSTNAME=common-backend
+      # Set spring.threads.virtual.enabled=true via a environment variable
+      - SPRING_THREADS_VIRTUAL_ENABLED=true
+    ports:
+      - "8083:8080"

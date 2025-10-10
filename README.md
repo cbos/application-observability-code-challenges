@@ -4,7 +4,7 @@
 ![Badge](https://goto.ceesbos.nl/badge/github/cbos/application-observability-code-challenges)
 
 Application Observability Code Challenges are a way to challenge yourself to improve the observability of a sample application. Of course, this application has some surprises that you probably did not expect.
-These challenges will help you develop an observability mindset and become more familiar with your observability tools.
+These puzzlers will help you develop an observability mindset and become more familiar with your observability tools.
 
 See the announcement blog about [Application Observability Code Challenges](https://goto.ceesbos.nl/aocc) for more information.
 
@@ -53,3 +53,4 @@ The sample application is prepared to send data using OpenTelemetry, so any setu
 # Challenges
 
 - [Challenge 1](challenge-01/README.md) - Spring boot with Jersey/JAX-RS REST endpoint with some strange behaviour 🤔
+- [Challenge 2](challenge-02/README.md) - Spot the difference between system thread and virtual thread usage for the same application with some problems
