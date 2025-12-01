@@ -75,7 +75,7 @@ Now you can open http://localhost:3000 to open Grafana.
 
 ## Run the application setup
 
-The setup of application contains 4 applications:
+The setup contains 4 applications:
 - `common-backend`: A common backend used by three other applications
 - `regular-threads`: A version of the application with Java 21 and using regular threads to execute the requests
 - `virtual-threads-21`: A version of the application with Java 21 and using `Virtual Threads` to execute the requests
